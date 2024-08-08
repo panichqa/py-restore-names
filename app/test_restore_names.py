@@ -1,14 +1,7 @@
-import pytest
 from app.restore_names import restore_names
 
-import pytest
-from typing import List
 
-
-# Assuming restore_names function is defined in a module named app
-# from app import restore_names
-
-def test_restore_names_with_none_first_name():
+def test_restore_names_with_none_first_name() -> None:
     users = [
         {
             "first_name": None,
@@ -38,7 +31,7 @@ def test_restore_names_with_none_first_name():
     assert users == expected
 
 
-def test_restore_names_with_existing_first_name():
+def test_restore_names_with_existing_first_name() -> None:
     users = [
         {
             "first_name": "John",
@@ -69,7 +62,7 @@ def test_restore_names_with_existing_first_name():
     assert users == expected
 
 
-def test_restore_names_missing_first_name_key():
+def test_restore_names_missing_first_name_key() -> None:
     users = [
         {
             "last_name": "Johnson",
@@ -99,7 +92,7 @@ def test_restore_names_missing_first_name_key():
     assert users == expected
 
 
-def test_restore_names_empty_list():
+def test_restore_names_empty_list() -> None:
     users = []
     expected = []
 
@@ -107,7 +100,7 @@ def test_restore_names_empty_list():
     assert users == expected
 
 
-def test_restore_names_single_word_full_name():
+def test_restore_names_single_word_full_name() -> None:
     users = [
         {
             "first_name": None,
